@@ -12,8 +12,41 @@
 		<p class="col-12 text-center">Au survol de la souris, appliquer un border à l'image</p>
 	</div>
 	<div class="container-fluid col-12">
-		<img alt="livre sur le code" class="img-fluid" id="border" onmouseover="changeBorder(id)" src="image.jpg">
+		<img src="image.jpg" alt="couverture livre sur le code" class="img-fluid" onmouseover="addBorder(1)" onmouseout="addBorder(2)" id="image">
   </div>
-		<script type="text/javascript" src="app.js"></script>
+	<!-- <div class="container-fluid col-12">
+		<img src="image.jpg" alt="couverture livre sur le code" class="img-fluid" onmouseover="addBorder(1)" onmouseout="addBorder(2)" id="image">
+	</div> pour correction plusieurs images-->
+		<script type="text/javascript">
+
+		// ******** correction JP ****************
+		var img1 = document.getElementById('image');
+
+		function addBorder(tutu) {
+		  if (tutu == 1) {
+		    img1.style.border = '3px solid black';
+		  }else if (tutu == 2){
+		    img1.style.border = 'none';
+		  }
+		}
+		</script>
+		<!-- **************** correction JP ********************** -->
+		<!-- événement à supprimer dans la balise img onmouseover="changeBorder(id)"
+		pour script direct dans html, marche aussi avec -->
+		<!-- <script type="text/javascript">
+		// querySelector séléctionne le premier élément img du document HTML
+		//	var toto = document.querySelector('img');
+		//	toto.addEventListener('mouseover', function(){this.style.border = '3px solid red';});
+		//	toto.addEventListener('mouseout', function(){this.style.border = 'none';});
+
+		// ******************* correction Adèle ****************
+		// utilisant document.querySelectorAll pour plusieurs images
+		// var toto = document.querySelectorAll('img');
+		// 	toto.forEach((img, i) => {
+		// 		img.addEventListener('mouseover', (e) => {
+		// 			img.style.border = '3px solid red';
+		// 		})
+		// 	});
+	</script> -->
 </body>
 </html>
